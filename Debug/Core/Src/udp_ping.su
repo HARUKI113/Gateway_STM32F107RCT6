@@ -1,0 +1,2 @@
+../Core/Src/udp_ping.c:27:6:UdpPing_init	8	static
+../Core/Src/udp_ping.c:35:6:UdpPing_Process	16	static

@@ -57,9 +57,44 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define ETH_TX_LED_Pin GPIO_PIN_13
+#define ETH_TX_LED_GPIO_Port GPIOC
+#define ETH_RX_LED_Pin GPIO_PIN_14
+#define ETH_RX_LED_GPIO_Port GPIOC
+#define ETH_ERROR_LED_Pin GPIO_PIN_15
+#define ETH_ERROR_LED_GPIO_Port GPIOC
+#define IP_SELECTOR0_Pin GPIO_PIN_1
+#define IP_SELECTOR0_GPIO_Port GPIOB
+#define IP_SELECTOR1_Pin GPIO_PIN_10
+#define IP_SELECTOR1_GPIO_Port GPIOB
+#define ETH_ID_Pin GPIO_PIN_7
+#define ETH_ID_GPIO_Port GPIOC
+#define CAN_RX_LED_Pin GPIO_PIN_8
+#define CAN_RX_LED_GPIO_Port GPIOC
+#define CAN_TX_LED_Pin GPIO_PIN_9
+#define CAN_TX_LED_GPIO_Port GPIOC
+#define SAFETY_PIN_Pin GPIO_PIN_12
+#define SAFETY_PIN_GPIO_Port GPIOC
 
 /* USER CODE BEGIN Private defines */
-
+//#define IP_SELECTOR0_Pin GPIO_PIN_1//PINによって書き換え必須。
+//#define IP_SELECTOR0_GPIO_Port GPIOB
+//#define IP_SELECTOR1_Pin GPIO_PIN_10
+//#define IP_SELECTOR1_GPIO_Port GPIOB
+//#define ETH_TX_LED_Pin GPIO_PIN_14
+//#define ETH_TX_LED_GPIO_Port GPIOB
+//#define ETH_RX_LED_Pin GPIO_PIN_15
+//#define ETH_RX_LED_GPIO_Port GPIOB
+//#define ETH_ERROR_LED_Pin GPIO_PIN_8
+//#define ETH_ERROR_LED_GPIO_Port GPIOC
+//#define CAN_TX_LED_Pin GPIO_PIN_6
+//#define CAN_TX_LED_GPIO_Port GPIOC
+//#define CAN_RX_LED_Pin GPIO_PIN_7
+//#define CAN_RX_LED_GPIO_Port GPIOC
+//#define CAN_ERROR_LED_Pin GPIO_PIN_9
+//#define CAN_ERROR_LED_GPIO_Port GPIOC
+//#define SAFETY_PIN_Pin GPIO_PIN_12
+//#define SAFETY_PIN_GPIO_Port GPIOC
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

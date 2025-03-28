@@ -1,0 +1,4 @@
+../Core/Src/udp_debug.c:24:13:UdpDebug_errorLedOn	1
+../Core/Src/udp_debug.c:30:6:UdpDebug_initializer	1
+../Core/Src/udp_debug.c:39:6:UdpDebug_print	1
+../Core/Src/udp_debug.c:53:6:UdpDebug_error	1
