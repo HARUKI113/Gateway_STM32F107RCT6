@@ -116,7 +116,7 @@ int main(void)
 	EthToCan_init(&hcan1);
 	CanToEth_init(&hcan1);
 	UdpPing_init();
-//	RobomasMotor_init(&hcan2, &htim7);
+	RobomasMotor_init(&hcan2, &htim7);
 
   HAL_GPIO_WritePin(CAN_RX_LED_GPIO_Port, CAN_RX_LED_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(CAN_TX_LED_GPIO_Port, CAN_TX_LED_Pin, GPIO_PIN_SET);
@@ -135,7 +135,7 @@ int main(void)
 	    EthToCan_Process();
 	    CanToEth_Process();
 	    UdpPing_Process();
-//	    RobomasMotor_Process();
+	    RobomasMotor_Process();
 
 	    if(next_led_downtim < HAL_GetTick())
 	    {
@@ -290,9 +290,9 @@ static void MX_TIM7_Init(void)
 
   /* USER CODE END TIM7_Init 1 */
   htim7.Instance = TIM7;
-  htim7.Init.Prescaler = 50000-1;
+  htim7.Init.Prescaler = 72-1;
   htim7.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim7.Init.Period = 5-1;
+  htim7.Init.Period = 1000;
   htim7.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim7) != HAL_OK)
   {
