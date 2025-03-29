@@ -1,0 +1,15 @@
+*.o
+*.d
+*.su
+*.mk
+*.map
+*.bin
+*.elf
+*.list
+
+/.settings/
+
+/Debug/
+/Release/
+
+Gateway_STM32F107RCT6 Debug.launch

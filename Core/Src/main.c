@@ -52,10 +52,10 @@ TIM_HandleTypeDef htim7;
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-CAN_HandleTypeDef hcan1;
-CAN_HandleTypeDef hcan2;
-
-TIM_HandleTypeDef htim7;
+//CAN_HandleTypeDef hcan1;
+//CAN_HandleTypeDef hcan2;
+//
+//TIM_HandleTypeDef htim7;
 
 /* USER CODE BEGIN PV */
 
@@ -230,7 +230,21 @@ static void MX_CAN1_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN CAN1_Init 2 */
-
+  CAN_FilterTypeDef filter0;
+  filter0.FilterIdHigh         = 0;                        // フィルターID(上位16ビット)
+  filter0.FilterIdLow          = 0;                        // フィルターID(下位16ビット)
+  filter0.FilterMaskIdHigh     = 0;                  // フィルターマスク(上位16ビット)
+  filter0.FilterMaskIdLow      = 0;                  // フィルターマスク(下位16ビット)
+  filter0.FilterScale          = CAN_FILTERSCALE_32BIT;    // フィルタースケール
+  filter0.FilterFIFOAssignment = CAN_FILTER_FIFO0;         // フィルターに割り当てるFIFO
+  filter0.FilterBank           = 0;                        // フィルターバンクNo
+  filter0.FilterMode           = CAN_FILTERMODE_IDMASK;    // フィルターモード
+  filter0.SlaveStartFilterBank = 14;                       // スレーブCANの開始フィルターバンクNo
+  filter0.FilterActivation     = ENABLE;                  // フィルター無効／有効
+  if (HAL_CAN_ConfigFilter(&hcan1, &filter0) != HAL_OK)
+  {
+    Error_Handler();
+  }
   /* USER CODE END CAN1_Init 2 */
 
 }
@@ -267,7 +281,21 @@ static void MX_CAN2_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN CAN2_Init 2 */
-
+  CAN_FilterTypeDef filter1;
+  filter1.FilterIdHigh         = 0;                        // フィルターID(上位16ビット)
+  filter1.FilterIdLow          = 0;                        // フィルターID(下位16ビット)
+  filter1.FilterMaskIdHigh     = 0;                  // フィルターマスク(上位16ビット)
+  filter1.FilterMaskIdLow      = 0;                  // フィルターマスク(下位16ビット)
+  filter1.FilterScale          = CAN_FILTERSCALE_32BIT;    // フィルタースケール
+  filter1.FilterFIFOAssignment = CAN_FILTER_FIFO0;         // フィルターに割り当てるFIFO
+  filter1.FilterBank           = 0;                        // フィルターバンクNo
+  filter1.FilterMode           = CAN_FILTERMODE_IDMASK;    // フィルターモード
+  filter1.SlaveStartFilterBank = 14;                       // スレーブCANの開始フィルターバンクNo
+  filter1.FilterActivation     = ENABLE;                  // フィルター無効／有効
+  if (HAL_CAN_ConfigFilter(&hcan2, &filter1) != HAL_OK)
+  {
+    Error_Handler();
+  }
   /* USER CODE END CAN2_Init 2 */
 
 }
